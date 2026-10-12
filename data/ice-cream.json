@@ -1,0 +1,174 @@
+{
+  "sizes": [
+    {
+      "name_en": "Junior",
+      "name_es": "Junior",
+      "price": "$3.99"
+    },
+    {
+      "name_en": "Small",
+      "name_es": "Pequeño",
+      "price": "$6.40"
+    },
+    {
+      "name_en": "Large",
+      "name_es": "Grande",
+      "price": "$7.99"
+    },
+    {
+      "name_en": "Pint",
+      "name_es": "Pinta",
+      "price": "$10.69"
+    },
+    {
+      "name_en": "Banana Split",
+      "name_es": "Banana Split",
+      "price": "$11.89"
+    },
+    {
+      "name_en": "Toppings",
+      "name_es": "Toppings",
+      "price": "$0.60"
+    }
+  ],
+  "flavors": [
+    {
+      "name_en": "Vanilla",
+      "name_es": "Vainilla",
+      "sold_out": false,
+      "hidden": false
+    },
+    {
+      "name_en": "Rum Raisin",
+      "name_es": "Ron con Pasas",
+      "sold_out": false,
+      "hidden": false
+    },
+    {
+      "name_en": "Strawberry",
+      "name_es": "Fresa",
+      "sold_out": false,
+      "hidden": false
+    },
+    {
+      "name_en": "White Russian",
+      "name_es": "White Russian",
+      "sold_out": false,
+      "hidden": false
+    },
+    {
+      "name_en": "Coffee",
+      "name_es": "Café",
+      "sold_out": false,
+      "hidden": false
+    },
+    {
+      "name_en": "Mamey",
+      "name_es": "Mamey",
+      "sold_out": false,
+      "hidden": false
+    },
+    {
+      "name_en": "Chocolate Chip Cookie Dough",
+      "name_es": "Masa de Galleta con Chispas",
+      "sold_out": false,
+      "hidden": false
+    },
+    {
+      "name_en": "Mango",
+      "name_es": "Mango",
+      "sold_out": false,
+      "hidden": false
+    },
+    {
+      "name_en": "Mint Chocolate Chip",
+      "name_es": "Menta con Chispas",
+      "sold_out": false,
+      "hidden": false
+    },
+    {
+      "name_en": "Guanabana Soursop",
+      "name_es": "Guanábana",
+      "sold_out": false,
+      "hidden": false
+    },
+    {
+      "name_en": "Oreo",
+      "name_es": "Oreo",
+      "sold_out": false,
+      "hidden": false
+    },
+    {
+      "name_en": "Coconut",
+      "name_es": "Coco",
+      "sold_out": false,
+      "hidden": false
+    },
+    {
+      "name_en": "Butter Pecan",
+      "name_es": "Mantequilla con Nuez",
+      "sold_out": false,
+      "hidden": false
+    },
+    {
+      "name_en": "Guava",
+      "name_es": "Guayaba",
+      "sold_out": false,
+      "hidden": false
+    },
+    {
+      "name_en": "Chocolate!",
+      "name_es": "¡Chocolate!",
+      "sold_out": false,
+      "hidden": false
+    },
+    {
+      "name_en": "Pistachio",
+      "name_es": "Pistacho",
+      "sold_out": false,
+      "hidden": false
+    }
+  ],
+  "smoothies": [
+    {
+      "name_en": "Berry Banana",
+      "name_es": "Berry Banana",
+      "description_en": "Strawberry, banana, vanilla ice cream",
+      "description_es": "Fresa, plátano, helado de vainilla",
+      "sold_out": false,
+      "hidden": false
+    },
+    {
+      "name_en": "Blue Hawaiian",
+      "name_es": "Blue Hawaiian",
+      "description_en": "Banana, blueberries, pineapple, vanilla ice cream, apple juice",
+      "description_es": "Plátano, arándanos, piña, helado de vainilla, jugo de manzana",
+      "sold_out": false,
+      "hidden": false
+    },
+    {
+      "name_en": "Nana Nutter",
+      "name_es": "Nana Nutter",
+      "description_en": "Banana, apple juice, peanut butter, vanilla ice cream",
+      "description_es": "Plátano, jugo de manzana, crema de cacahuate, helado de vainilla",
+      "sold_out": false,
+      "hidden": false
+    },
+    {
+      "name_en": "Orange Sipper",
+      "name_es": "Orange Sipper",
+      "description_en": "Orange juice, vanilla ice cream",
+      "description_es": "Jugo de naranja, helado de vainilla",
+      "sold_out": false,
+      "hidden": false
+    },
+    {
+      "name_en": "Cafe Captiva",
+      "name_es": "Cafe Captiva",
+      "description_en": "Coffee, crushed ice, chocolate syrup, vanilla ice cream, whip cream",
+      "description_es": "Café, hielo picado, jarabe de chocolate, helado de vainilla, crema batida",
+      "sold_out": false,
+      "hidden": false
+    }
+  ]
+}

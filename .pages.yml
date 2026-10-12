@@ -1,0 +1,225 @@
+# Admin forms for the Chris' Ice Cream menu site.
+# Managers edit at https://app.pagescms.org (sign in with GitHub, open this repo).
+# Every Save updates the live site within about a minute.
+
+content:
+  # ------------------------------------------------------------------
+  - name: notice
+    label: "1. Closure notice / announcement"
+    type: file
+    path: data/notice.json
+    format: json
+    fields:
+      - name: show
+        label: Show the notice on the website
+        type: boolean
+        description: Turn ON when the shop is closed (weather, holiday, repairs) or for any announcement. Turn OFF when you reopen.
+      - name: style
+        label: Type of notice
+        type: select
+        description: "Closed = dark red banner that says CLOSED. Info = gold banner that says NOTICE."
+        options:
+          values: [Closed, Info]
+      - name: message_en
+        label: Message (English)
+        type: text
+        description: "Example: We're closed today due to inclement weather. Stay safe!"
+      - name: message_es
+        label: Message (Español)
+        type: text
+        description: "Ejemplo: Hoy estamos cerrados por mal tiempo. ¡Cuídense!"
+      - name: show_until
+        label: Hide automatically after this date (optional)
+        type: date
+        description: Leave blank to keep showing until you turn it off yourself.
+
+  # ------------------------------------------------------------------
+  - name: info
+    label: "2. Hours & contact"
+    type: file
+    path: data/info.json
+    format: json
+    fields:
+      - name: phone
+        label: Phone number
+        type: string
+        description: "Format: (317) 255-2156"
+        required: true
+      - name: hours_en
+        label: Hours (English)
+        type: string
+        description: "Example: 10:30am – 8:00pm"
+      - name: hours_es
+        label: Hours (Español)
+        type: string
+      - name: closed_days_en
+        label: Closed days (English)
+        type: string
+        description: "Example: Closed Sundays"
+      - name: closed_days_es
+        label: Closed days (Español)
+        type: string
+        description: "Ejemplo: Cerrado los domingos"
+      - name: street
+        label: Street address
+        type: string
+      - name: shopping_center
+        label: Shopping center
+        type: string
+      - name: city
+        label: City, state, ZIP
+        type: string
+      - name: instagram
+        label: Instagram username (without @)
+        type: string
+
+  # ------------------------------------------------------------------
+  - name: menu
+    label: "3. Food menu"
+    type: file
+    path: data/menu.json
+    format: json
+    fields:
+      - name: sections
+        label: Menu sections
+        type: object
+        list: true
+        description: Each section is a heading on the menu (Tacos, Burritos...). Drag to reorder.
+        fields:
+          - name: title_en
+            label: Section title (English)
+            type: string
+            required: true
+          - name: title_es
+            label: Section title (Español)
+            type: string
+            required: true
+          - name: sheet
+            label: Which menu page
+            type: select
+            description: Matches the printed menu. Sheet 1 = Tacos, Burritos, Enchiladas, Flautas, Sopes. Sheet 2 = Tortas, Quesadillas, Plates, Sides, Kids.
+            options:
+              values: [Sheet 1, Sheet 2]
+          - name: column
+            label: Which column
+            type: select
+            options:
+              values: [Left, Right]
+          - name: price_line
+            label: Price line under the title (optional)
+            type: string
+            description: "Only for sections priced by quantity, like Enchiladas: [3] $11.50    [4] $12.99  (put two spaces between prices)"
+          - name: note_en
+            label: Note at bottom of section (English, optional)
+            type: string
+            description: "Example: Add egg +$1.50"
+          - name: note_es
+            label: Note at bottom of section (Español, optional)
+            type: string
+          - name: hidden
+            label: Hide this whole section
+            type: boolean
+          - name: items
+            label: Items
+            type: object
+            list: true
+            fields:
+              - name: name_en
+                label: Item name (English)
+                type: string
+                required: true
+              - name: name_es
+                label: Item name (Español)
+                type: string
+                required: true
+              - name: price
+                label: Price
+                type: string
+                description: "Include the dollar sign, e.g. $11.99"
+              - name: description_en
+                label: Description (English)
+                type: text
+              - name: description_es
+                label: Description (Español)
+                type: text
+              - name: label
+                label: Icon next to the name
+                type: select
+                options:
+                  values: [None, Veggie, Spicy]
+              - name: sold_out
+                label: Sold out (still shows, marked "Sold out")
+                type: boolean
+              - name: hidden
+                label: Hide from the menu
+                type: boolean
+
+  # ------------------------------------------------------------------
+  - name: icecream
+    label: "4. Ice cream & smoothies"
+    type: file
+    path: data/ice-cream.json
+    format: json
+    fields:
+      - name: sizes
+        label: Ice cream sizes & prices
+        type: object
+        list: true
+        fields:
+          - name: name_en
+            label: Size (English)
+            type: string
+            required: true
+          - name: name_es
+            label: Size (Español)
+            type: string
+            required: true
+          - name: price
+            label: Price
+            type: string
+            description: "Include the dollar sign, e.g. $3.99"
+      - name: flavors
+        label: Flavors
+        type: object
+        list: true
+        description: Add, remove, or drag to reorder the flavor board.
+        fields:
+          - name: name_en
+            label: Flavor (English)
+            type: string
+            required: true
+          - name: name_es
+            label: Flavor (Español)
+            type: string
+            required: true
+          - name: sold_out
+            label: Sold out today
+            type: boolean
+          - name: hidden
+            label: Hide from the board
+            type: boolean
+      - name: smoothies
+        label: Smoothies
+        type: object
+        list: true
+        fields:
+          - name: name_en
+            label: Smoothie name (English)
+            type: string
+            required: true
+          - name: name_es
+            label: Smoothie name (Español)
+            type: string
+            required: true
+          - name: description_en
+            label: Ingredients (English)
+            type: text
+          - name: description_es
+            label: Ingredients (Español)
+            type: text
+          - name: sold_out
+            label: Sold out
+            type: boolean
+          - name: hidden
+            label: Hide from the menu
+            type: boolean

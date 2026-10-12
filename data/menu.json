@@ -1,0 +1,49 @@
+{
+  "sections": [
+    {"title_en": "Tacos", "title_es": "Tacos", "sheet": "Sheet 1", "column": "Left", "price_line": "", "note_en": "", "note_es": "", "hidden": false, "items": [
+        {"name_en": "Steak, Chicken, Pork, or Chorizo", "name_es": "Res, Pollo, Cerdo o Chorizo", "price": "$4.35", "description_en": "Choice of meat, cilantro, lettuce, and onions", "description_es": "Elección de carne, cilantro, lechuga y cebolla", "label": "None", "sold_out": false, "hidden": false},
+        {"name_en": "Campechano", "name_es": "Campechano", "price": "$4.35", "description_en": "Chorizo mixed with steak, cilantro, lettuce, and onions", "description_es": "Chorizo mezclado con res, cilantro, lechuga y cebolla", "label": "None", "sold_out": false, "hidden": false},
+        {"name_en": "Veggie", "name_es": "Vegetariano", "price": "$4.35", "description_en": "Beans, rice, lettuce, cilantro, tomato, onions, and avocado", "description_es": "Frijoles, arroz, lechuga, cilantro, tomate, cebolla y aguacate", "label": "Veggie", "sold_out": false, "hidden": false}
+    ]},
+    {"title_en": "Burritos", "title_es": "Burritos", "sheet": "Sheet 1", "column": "Left", "price_line": "", "note_en": "", "note_es": "", "hidden": false, "items": [
+        {"name_en": "Steak, Chicken, Pork, or Chorizo", "name_es": "Res, Pollo, Cerdo o Chorizo", "price": "$11.99", "description_en": "Choice of meat, beans, cheese, rice, sour cream, lettuce, and onions", "description_es": "Elección de carne, frijoles, queso, arroz, crema, lechuga y cebolla", "label": "None", "sold_out": false, "hidden": false},
+        {"name_en": "Campechano", "name_es": "Campechano", "price": "$11.99", "description_en": "Chorizo mixed with steak, beans, cheese, rice, sour cream, lettuce, and onions", "description_es": "Chorizo mezclado con res, frijoles, queso, arroz, crema, lechuga y cebolla", "label": "None", "sold_out": false, "hidden": false},
+        {"name_en": "Veggie", "name_es": "Vegetariano", "price": "$11.99", "description_en": "Beans, cheese, rice, sour cream, lettuce, onions, and avocado", "description_es": "Frijoles, queso, arroz, crema, lechuga, cebolla y aguacate", "label": "Veggie", "sold_out": false, "hidden": false},
+        {"name_en": "California Style", "name_es": "Estilo California", "price": "$12.99", "description_en": "Choice of meat, beans, cheese, rice, sour cream, lettuce, onions, avocado, and fries", "description_es": "Elección de carne, frijoles, queso, arroz, crema, lechuga, cebolla, aguacate y papas fritas", "label": "None", "sold_out": false, "hidden": false}
+    ]},
+    {"title_en": "Enchiladas", "title_es": "Enchiladas", "sheet": "Sheet 1", "column": "Right", "price_line": "[3] $11.50    [4] $12.99", "note_en": "Add egg +$1.50", "note_es": "Agregar huevo +$1.50", "hidden": false, "items": [
+        {"name_en": "Steak, Chicken, Pork, or Chorizo", "name_es": "Res, Pollo, Cerdo o Chorizo", "price": "", "description_en": "Choice of meat, cilantro, lettuce, onions, sour cream, cotija cheese, and green sauce", "description_es": "Elección de carne, cilantro, lechuga, cebolla, crema, queso cotija y salsa verde", "label": "None", "sold_out": false, "hidden": false}
+    ]},
+    {"title_en": "Flautas [5]", "title_es": "Flautas [5]", "sheet": "Sheet 1", "column": "Right", "price_line": "", "note_en": "", "note_es": "", "hidden": false, "items": [
+        {"name_en": "Chicken or Steak", "name_es": "Pollo o Res", "price": "$11.99", "description_en": "Choice of meat, lettuce, cilantro, sour cream, and cheese", "description_es": "Elección de carne, lechuga, cilantro, crema y queso", "label": "None", "sold_out": false, "hidden": false}
+    ]},
+    {"title_en": "Sopes [3]", "title_es": "Sopes [3]", "sheet": "Sheet 1", "column": "Right", "price_line": "", "note_en": "", "note_es": "", "hidden": false, "items": [
+        {"name_en": "Steak, Chicken, Pork, or Chorizo", "name_es": "Res, Pollo, Cerdo o Chorizo", "price": "$15.00", "description_en": "Choice of meat, beans, lettuce, cilantro, onions, sour cream, and cotija cheese", "description_es": "Elección de carne, frijoles, lechuga, cilantro, cebolla, crema y queso cotija", "label": "None", "sold_out": false, "hidden": false},
+        {"name_en": "Campechano", "name_es": "Campechano", "price": "$15.00", "description_en": "Chorizo mixed with steak, beans, lettuce, cilantro, onions, sour cream, and cotija cheese", "description_es": "Chorizo mezclado con res, frijoles, lechuga, cilantro, cebolla, crema y queso cotija", "label": "None", "sold_out": false, "hidden": false},
+        {"name_en": "Veggie", "name_es": "Vegetariano", "price": "$15.00", "description_en": "Lettuce, cilantro, onions, sour cream, cheese, rice, and beans", "description_es": "Lechuga, cilantro, cebolla, crema, queso, arroz y frijoles", "label": "Veggie", "sold_out": false, "hidden": false}
+    ]},
+    {"title_en": "Tortas", "title_es": "Tortas", "sheet": "Sheet 2", "column": "Left", "price_line": "", "note_en": "", "note_es": "", "hidden": false, "items": [
+        {"name_en": "Steak, Pork, Ham, Hot Dog, Chorizo, or Chicken", "name_es": "Res, Cerdo, Jamón, Hot Dog, Chorizo o Pollo", "price": "$12.99", "description_en": "Choice of meat, Mexican bread, beans, cheese, tomato, onions, lettuce, avocado, and mayonnaise", "description_es": "Elección de carne, pan mexicano, frijoles, queso, tomate, cebolla, lechuga, aguacate y mayonesa", "label": "None", "sold_out": false, "hidden": false},
+        {"name_en": "Chicken, or Steak Milanesa", "name_es": "Milanesa de Pollo o Res", "price": "$12.99", "description_en": "Choice of meat, Mexican bread, beans, cheese, tomato, onions, lettuce, avocado, and mayonnaise", "description_es": "Elección de carne, pan mexicano, frijoles, queso, tomate, cebolla, lechuga, aguacate y mayonesa", "label": "None", "sold_out": false, "hidden": false},
+        {"name_en": "Cubana", "name_es": "Cubana", "price": "$12.99", "description_en": "Mexican bread, beans, cheese, ham, hot dog, breaded chicken, tomato, onions, lettuce, avocado, and mayonnaise", "description_es": "Pan mexicano, frijoles, queso, jamón, hot dog, pollo empanizado, tomate, cebolla, lechuga, aguacate y mayonesa", "label": "None", "sold_out": false, "hidden": false},
+        {"name_en": "Caprichosa", "name_es": "Caprichosa", "price": "$13.99", "description_en": "Mexican bread, beans, cheese, ham, hot dog, breaded chicken, tomato, onions, lettuce, avocado, mayonnaise, and scrambled eggs with chorizo", "description_es": "Pan mexicano, frijoles, queso, jamón, hot dog, pollo empanizado, tomate, cebolla, lechuga, aguacate, mayonesa y huevo revuelto con chorizo", "label": "None", "sold_out": false, "hidden": false}
+    ]},
+    {"title_en": "Quesadillas", "title_es": "Quesadillas", "sheet": "Sheet 2", "column": "Left", "price_line": "", "note_en": "", "note_es": "", "hidden": false, "items": [
+        {"name_en": "Steak, Chicken, Pork, or Chorizo", "name_es": "Res, Pollo, Cerdo o Chorizo", "price": "$11.99", "description_en": "Choice of meat, cheese, onions, and lettuce", "description_es": "Elección de carne, queso, cebolla y lechuga", "label": "None", "sold_out": false, "hidden": false}
+    ]},
+    {"title_en": "Plates", "title_es": "Platos", "sheet": "Sheet 2", "column": "Right", "price_line": "", "note_en": "", "note_es": "", "hidden": false, "items": [
+        {"name_en": "Breaded Chicken or Steak", "name_es": "Pollo o Res Empanizado", "price": "$15.99", "description_en": "Choice of meat, rice, beans, salad with a slice of avocado, and corn tortillas", "description_es": "Elección de carne, arroz, frijoles, ensalada con una rebanada de aguacate y tortillas de maíz", "label": "None", "sold_out": false, "hidden": false},
+        {"name_en": "Steak Mexican Style", "name_es": "Res Estilo Mexicano", "price": "$15.99", "description_en": "Steak with jalapeños, onions, and tomato with rice, beans, salad with a slice of avocado and corn tortillas", "description_es": "Res con jalapeños, cebolla y tomate, con arroz, frijoles, ensalada con aguacate y tortillas de maíz", "label": "Spicy", "sold_out": false, "hidden": false},
+        {"name_en": "Steak Salvadorean Style", "name_es": "Res Estilo Salvadoreño", "price": "$15.99", "description_en": "Steak with onions and tomato with rice, beans, salad with a slice of avocado and corn tortillas", "description_es": "Res con cebolla y tomate, con arroz, frijoles, ensalada con aguacate y tortillas de maíz", "label": "None", "sold_out": false, "hidden": false}
+    ]},
+    {"title_en": "Sides", "title_es": "Guarniciones", "sheet": "Sheet 2", "column": "Right", "price_line": "", "note_en": "", "note_es": "", "hidden": false, "items": [
+        {"name_en": "Fries", "name_es": "Papas Fritas", "price": "$3.50", "description_en": "", "description_es": "", "label": "None", "sold_out": false, "hidden": false},
+        {"name_en": "Rice", "name_es": "Arroz", "price": "$3.50", "description_en": "", "description_es": "", "label": "None", "sold_out": false, "hidden": false},
+        {"name_en": "Beans", "name_es": "Frijoles", "price": "$3.50", "description_en": "", "description_es": "", "label": "None", "sold_out": false, "hidden": false}
+    ]},
+    {"title_en": "Kids", "title_es": "Niños", "sheet": "Sheet 2", "column": "Right", "price_line": "", "note_en": "", "note_es": "", "hidden": false, "items": [
+        {"name_en": "Chicken Fingers", "name_es": "Dedos de Pollo", "price": "$9.99", "description_en": "Chicken fingers and french fries", "description_es": "Dedos de pollo con papas fritas", "label": "None", "sold_out": false, "hidden": false},
+        {"name_en": "Cheese Quesadilla", "name_es": "Quesadilla de Queso", "price": "$6.99", "description_en": "Cheese, onions, and lettuce", "description_es": "Queso, cebolla y lechuga", "label": "None", "sold_out": false, "hidden": false}
+    ]}
+  ]
+}
