@@ -235,6 +235,46 @@
   .flavor-tag.is-sold-out::after{content:attr(data-sold); display:block; font-family:'Oswald',sans-serif; font-size:.62rem; letter-spacing:.1em; text-transform:uppercase;}
   .smoothie-card.is-sold-out h4,.smoothie-card.is-sold-out p{opacity:.55;}
   .load-error{max-width:640px; margin:40px auto; padding:20px; text-align:center; background:var(--paper); border:1px solid var(--line);}
+
+  /* ---------- desktop: tighter sheets, larger type (phone layout above is unchanged) ---------- */
+  @media (min-width: 900px){
+    .wrap{max-width:1040px; padding:20px 28px 56px;}
+    .sheet{margin:22px auto;}
+    .sheet-top-rule{margin:22px 40px 0;}
+    .sheet-body{padding:18px 40px 6px; gap:0 56px;}
+    .sheet-footer{padding:14px 40px 18px; font-size:.86rem;}
+
+    .food-group h2{font-size:1.45rem;}
+    .col > .food-group + .food-group{margin-top:30px;}
+    .dish{margin-top:16px;}
+    .dish-row{font-size:1.1rem;}
+    .dish p.desc{font-size:.98rem; line-height:1.45;}
+    .enchilada-prices{font-size:1.12rem;}
+    .addon-note{font-size:.98rem;}
+
+    .masthead{padding:30px 18px 24px;}
+    .masthead-meta{font-size:.95rem; gap:8px 26px;}
+    .masthead-tagline{font-size:1.05rem;}
+    .lang-toggle button{font-size:.82rem; padding:7px 18px;}
+    .reference-note{font-size:.98rem;}
+    .reference-note .note-sub{font-size:.88rem;}
+    nav.menu-nav{padding:10px 16px; gap:4px;}
+    nav.menu-nav a{font-size:.95rem; padding:6px 12px;}
+
+    .ice-title{font-size:1.3rem; margin-top:26px;}
+    .ice-price-grid{max-width:720px; gap:6px 56px;}
+    .ice-price-grid .row{font-size:1.08rem; padding:6px 0;}
+    .flavor-smoothie-wrap{padding:10px 40px 30px; gap:44px; grid-template-columns:1.35fr 1fr;}
+    .flavor-board h3{font-size:1.45rem;}
+    .flavor-tag{font-size:1.08rem; padding:9px 8px;}
+    .smoothie-list h3{font-size:1.3rem;}
+    .smoothie-card{padding:11px 0;}
+    .smoothie-card h4{font-size:1.1rem;}
+    .smoothie-card p{font-size:.95rem;}
+
+    .contact-grid{font-size:1rem;}
+    .call-note{font-size:.95rem;}
+  }
 </style>
 </head>
 <body>
