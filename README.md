@@ -7,7 +7,7 @@ A reference-only online menu for Chris' Ice Cream & Mexican Food in Nora Corners
 - **Hours:** 10:30am – 8:00pm, closed Sundays
 - **Instagram:** [@ChrisIceCreamIndy](https://instagram.com/ChrisIceCreamIndy)
 
-This site is a menu only. It does not take online orders; customers call to order.
+This site is a virtual menu only. It does not take online orders; customers order in person or by phone.
 
 ## Structure
 
