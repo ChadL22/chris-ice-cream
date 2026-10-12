@@ -86,8 +86,11 @@
     position:sticky; top:0; z-index:5;
     background:#dfd6bd; border-bottom:1px solid var(--line);
     padding:8px 12px; overflow-x:auto; white-space:nowrap;
-    display:flex; gap:6px; justify-content:center;
+    display:flex; gap:6px; justify-content:flex-start;
   }
+  /* centers the pills when they fit, but starts at the left edge when they overflow (so Tacos is never clipped) */
+  nav.menu-nav a:first-child{margin-left:auto;}
+  nav.menu-nav a:last-child{margin-right:auto;}
   nav.menu-nav a{
     text-decoration:none; font-family:'Oswald',sans-serif; font-size:.74rem;
     letter-spacing:.05em; font-weight:600; color:#4a4238;
@@ -600,7 +603,7 @@ function observeSheets(){
         obs.unobserve(entry.target);
       }
     });
-  }, {threshold:0.08});
+  }, {threshold:0});
   document.querySelectorAll(".sheet").forEach(s=>obs.observe(s));
 }
 
