@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chris' Ice Cream & Mexican Food — Menu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Gelasio:wght@400;700&family=Open+Sans:wght@600;700&family=Oswald:wght@500;600;700&family=Karla:wght@400;500;600;700;800&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F1E4;
+    --logo-bg:#ECE9E0;
+    --ink:#1c1815;
+    --ink-soft:#5b5148;
+    --maroon:#7C1F3B;
+    --maroon-dark:#4F1226;
+    --pine:#2F6B3F;
+    --gold:#C98A22;
+    --chili:#B7351F;
+    --heart:#BE5169;
+    --line:#c9bd9f;
+    --line-soft:#ddd3ba;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;}
+  }
+  body{
+    margin:0;
+    background:#dfd6bd;
+    color:var(--ink);
+    font-family:'Karla',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+
+  .wrap{max-width:1220px; margin:0 auto; padding:24px 18px 60px;}
+
+  /* ---------- masthead: logo-led header ---------- */
+  .masthead{
+    background:var(--paper);
+    border-bottom:4px solid var(--logo-rule);
+    padding:34px 18px 26px;
+    text-align:center;
+  }
+  .masthead-inner{max-width:760px; margin:0 auto;}
+  .masthead-tagline{margin:14px 0 0; font-family:'Open Sans','Karla',sans-serif; font-weight:600; font-size:.95rem; color:var(--ink);}
+  .phone-cta{
+    display:inline-flex; flex-direction:column; align-items:center;
+    margin-top:20px; padding:12px 30px;
+    background:var(--maroon); color:#fff; text-decoration:none;
+    border-radius:6px; box-shadow:0 4px 12px rgba(124,31,59,.25);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .phone-cta:hover{transform:translateY(-1px); box-shadow:0 6px 16px rgba(124,31,59,.32);}
+  .phone-cta-label{font-family:'Oswald',sans-serif; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; opacity:.85;}
+  .phone-cta-number{font-family:'Karla',sans-serif; font-weight:800; font-size:1.45rem; letter-spacing:.02em; margin-top:2px;}
+  .masthead-meta{
+    margin-top:18px;
+    display:flex; flex-wrap:wrap; justify-content:center; gap:6px 20px;
+    font-family:'Oswald',sans-serif; font-size:.78rem; letter-spacing:.03em; color:#3b342c;
+  }
+  .masthead-meta a{text-decoration:none;}
+  .masthead-meta a:hover span{border-bottom:1px solid rgba(59,52,44,.45);}
+  .meta-item{display:inline-flex; align-items:center; gap:.4em;}
+  .meta-icon{width:1.05em; height:1.05em; flex:0 0 auto; fill:none; stroke:var(--maroon); stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round;}
+  .lang-toggle{display:inline-flex; border:1.5px solid var(--maroon); border-radius:999px; overflow:hidden; margin-top:18px;}
+  .lang-toggle button{font-family:'Oswald',sans-serif; font-size:.74rem; letter-spacing:.08em; font-weight:600; padding:6px 16px; background:transparent; border:none; color:var(--maroon); cursor:pointer;}
+  .lang-toggle button[aria-pressed="true"]{background:var(--maroon); color:#fff;}
+  .lang-toggle button:focus-visible{outline:2px solid var(--pine); outline-offset:-2px;}
+
+  .reference-note{
+    background:#f2e4c8;
+    border-bottom:1px solid var(--line);
+    padding:9px 18px;
+    text-align:center;
+    font-size:.84rem;
+    color:#5a4a30;
+  }
+
+  nav.menu-nav{
+    position:sticky; top:0; z-index:5;
+    background:#dfd6bd; border-bottom:1px solid var(--line);
+    padding:8px 12px; overflow-x:auto; white-space:nowrap;
+    display:flex; gap:6px; justify-content:center;
+  }
+  nav.menu-nav a{
+    text-decoration:none; font-family:'Oswald',sans-serif; font-size:.74rem;
+    letter-spacing:.05em; font-weight:600; color:#4a4238;
+    padding:5px 10px; border-radius:999px; border:1px solid transparent;
+    flex:0 0 auto;
+  }
+  nav.menu-nav a:hover, nav.menu-nav a:focus-visible{color:var(--maroon); border-color:var(--line); background:var(--paper);}
+
+  .sheet{
+    background:var(--paper);
+    border:1px solid var(--line);
+    box-shadow:0 10px 26px rgba(28,24,21,.14);
+    margin:26px auto;
+    position:relative;
+    opacity:0; transform:translateY(14px);
+    transition:opacity .5s ease, transform .5s ease;
+  }
+  .sheet.in-view{opacity:1; transform:translateY(0);}
+  .tape{position:absolute; width:90px; height:28px; top:-12px; background:linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.22)); border:1px solid rgba(255,255,255,.6); box-shadow:0 2px 6px rgba(0,0,0,.12); opacity:.7;}
+  .tape.l{left:18px; transform:rotate(-6deg);}
+  .tape.r{right:18px; transform:rotate(5deg);}
+  @media(max-width:640px){.tape{display:none;}}
+
+  .sheet-header{padding:26px 22px 12px; text-align:center;}
+
+  /* ---------- recreated brand lockup (vector, matches the printed logo) ---------- */
+  :root{ --logo-red:#B12A4A; --logo-green:#2E8B57; --logo-rule:#B23A55; --heart:#C8355F; }
+  .brand-lockup{display:inline-flex; align-items:flex-end; line-height:1; font-size:clamp(2.2rem, 7.5vw, 4rem); white-space:nowrap;}
+  .chris-word{
+    position:relative; display:inline-flex; align-items:baseline;
+    font-family:'Gelasio', Georgia, 'Times New Roman', serif; font-weight:700; font-size:1em;
+    color:var(--ink); padding:.16em .05em .14em; line-height:1; letter-spacing:-.01em;
+  }
+  .chris-word::before, .chris-word::after{
+    content:""; position:absolute; left:0; right:0; height:0;
+    border-top:.022em solid var(--logo-rule); box-shadow:0 .06em 0 0 var(--logo-rule);
+  }
+  .chris-word::before{top:.15em;}
+  .chris-word::after{bottom:.09em;}
+  .icon-slot{position:relative; display:inline-block; width:.5em; height:1em; vertical-align:baseline;}
+  .icon-slot svg{position:absolute; bottom:0; left:50%; transform:translateX(-50%); height:1.33em; width:auto; overflow:visible;}
+  .right-block{display:flex; flex-direction:column; align-items:flex-start; margin-left:.42em; padding-bottom:.14em;}
+  .word-icecream{font-family:'Gelasio', Georgia, 'Times New Roman', serif; font-weight:400; font-size:.85em; color:var(--ink); line-height:1; letter-spacing:.005em;}
+  .brand-line2{font-family:'Open Sans', 'Karla', sans-serif; font-weight:700; font-size:.47em; line-height:1; margin-top:.22em; letter-spacing:.01em;}
+  .brand-line2 .mex{color:var(--logo-red);}
+  .brand-line2 .food{color:var(--logo-green);}
+  .sheet-sub{margin:10px 0 0; font-size:.86rem; font-style:italic; color:var(--ink-soft);}
+  .rule-double{height:0; border-top:2px solid var(--maroon); border-bottom:2px solid var(--maroon); margin:14px 22px 0;}
+  .sheet-top-rule{margin:24px 22px 0;}
+
+  .sheet-body{
+    padding:20px 22px 8px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0 40px;
+  }
+  @media(max-width:700px){
+    .sheet-body{grid-template-columns:1fr;}
+  }
+  .col > .food-group + .food-group{margin-top:26px;}
+
+  .food-group, #icecream, #smoothies{scroll-margin-top:64px;}
+  .food-group h2{
+    font-family:'Oswald',sans-serif; font-weight:700; font-size:1.18rem;
+    letter-spacing:.04em; text-align:center;
+    margin:0 0 4px; padding-bottom:6px;
+    border-bottom:1px solid var(--ink);
+  }
+
+  .dish{margin-top:14px;}
+  .dish:first-of-type{margin-top:12px;}
+  .dish-row{display:flex; justify-content:space-between; align-items:baseline; gap:10px; font-family:'Karla',sans-serif; font-weight:700; font-size:.98rem;}
+  .dish-row .price{font-weight:700; color:var(--maroon-dark); white-space:nowrap;}
+  .dish p.desc{margin:3px 0 0; font-size:.85rem; color:var(--ink-soft); line-height:1.4;}
+  .badge-spicy{color:var(--chili); margin-left:3px;}
+  .badge-veg{color:var(--pine); margin-left:3px;}
+
+  .enchilada-prices{display:flex; justify-content:space-around; font-family:'Karla',sans-serif; font-weight:700; font-size:1rem; margin-top:10px;}
+  .enchilada-prices span.price{color:var(--maroon-dark);}
+  .addon-note{margin-top:8px; font-size:.85rem; color:var(--ink-soft); font-style:italic; text-align:center;}
+
+  .sheet-footer{
+    margin-top:10px; padding:12px 22px 20px;
+    display:flex; flex-wrap:wrap; justify-content:center; gap:6px 22px;
+    font-family:'Oswald',sans-serif; font-size:.74rem; letter-spacing:.03em; color:var(--ink-soft);
+    border-top:1px solid var(--line-soft);
+  }
+  .sheet-footer a{text-decoration:none; color:inherit; border-bottom:1px dotted var(--ink-soft);}
+
+  .ice-title{text-align:center; font-family:'Oswald',sans-serif; font-weight:700; letter-spacing:.08em; font-size:1.05rem; margin:18px 22px 6px;}
+  .ice-price-grid{
+    max-width:520px; margin:0 auto 22px; padding:0 22px;
+    display:grid; grid-auto-flow:column; grid-template-rows:repeat(3,auto); gap:4px 40px;
+  }
+  .ice-price-grid .row{display:flex; justify-content:space-between; border-bottom:1px dotted var(--line); padding:4px 0; font-size:.92rem;}
+  .ice-price-grid .row span:last-child{font-weight:700; color:var(--maroon-dark);}
+
+  .flavor-smoothie-wrap{display:grid; grid-template-columns:1.5fr 1fr; gap:26px; padding:6px 22px 26px;}
+  @media(max-width:760px){.flavor-smoothie-wrap{grid-template-columns:1fr;}}
+
+  .flavor-board h3{text-align:center; font-family:'Oswald',sans-serif; font-weight:700; letter-spacing:.06em; font-size:1.3rem; margin:6px 0 16px;}
+  .flavor-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px 14px;}
+  .flavor-tag{
+    font-family:'Kalam',cursive; font-weight:700; text-align:center;
+    padding:10px 8px; border-radius:3px; color:#fff; font-size:.98rem;
+    box-shadow:0 3px 0 rgba(0,0,0,.15), 0 5px 8px rgba(0,0,0,.12);
+    transition:transform .18s ease;
+  }
+  .flavor-tag:nth-child(6n+1){background:#3B5A8A; transform:rotate(-2deg);}
+  .flavor-tag:nth-child(6n+2){background:var(--maroon); transform:rotate(1.5deg);}
+  .flavor-tag:nth-child(6n+3){background:#6B4A2F; transform:rotate(-1deg);}
+  .flavor-tag:nth-child(6n+4){background:var(--pine); transform:rotate(2deg);}
+  .flavor-tag:nth-child(6n+5){background:var(--gold); color:#3a2a06; transform:rotate(-2.5deg);}
+  .flavor-tag:nth-child(6n+6){background:#2b2b2b; transform:rotate(1deg);}
+  .flavor-tag:hover{transform:scale(1.05) rotate(0deg); cursor:default;}
+
+  .smoothie-list h3{text-align:center; font-family:'Oswald',sans-serif; font-weight:700; letter-spacing:.06em; font-size:1.05rem; margin:6px 0 14px;}
+  .smoothie-card{border-bottom:1px dotted var(--line); padding:8px 0;}
+  .smoothie-card:last-child{border-bottom:none;}
+  .smoothie-card h4{margin:0 0 3px; font-family:'Oswald',sans-serif; font-weight:600; color:var(--maroon-dark); font-size:.92rem;}
+  .smoothie-card p{margin:0; font-size:.8rem; color:var(--ink-soft); line-height:1.4;}
+
+  footer{background:var(--maroon-dark); color:#f3e9df; padding:34px 22px 26px; text-align:center; margin-top:10px;}
+  footer h3{font-family:'Oswald',sans-serif; font-weight:700; letter-spacing:.06em; font-size:1.3rem; margin:0 0 6px;}
+  .contact-grid{display:flex; flex-wrap:wrap; justify-content:center; gap:24px; margin-top:18px; font-size:.92rem;}
+  .contact-grid .item{max-width:250px;}
+  .contact-grid .label{display:block; font-family:'Oswald',sans-serif; letter-spacing:.08em; font-size:.68rem; color:#d9b9c6; margin-bottom:4px;}
+  footer a.phone-link{color:#fff; text-decoration:none; border-bottom:1px solid rgba(255,255,255,.5);}
+  .call-note{margin-top:20px; font-size:.82rem; font-style:italic; color:#e3c9d3;}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div id="masthead-logo"></div>
+    <p class="masthead-tagline" data-en="Homemade ice cream, and fresh ingredients Mexican food" data-es="Helado casero y comida mexicana con ingredientes frescos"></p>
+
+    <a class="phone-cta" href="tel:3172552156">
+      <span class="phone-cta-label" data-en="Call to order" data-es="Llama para ordenar"></span>
+      <span class="phone-cta-number">(317) 255-2156</span>
+    </a>
+
+    <div class="masthead-meta">
+      <span class="meta-item">
+        <svg class="meta-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>
+        <span data-en="10:30am – 8:00pm · Closed Sundays" data-es="10:30am – 8:00pm · Cerrado los domingos"></span>
+      </span>
+      <span class="meta-item">
+        <svg class="meta-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+        <span>1484 East 86th St, Nora Corners, Indianapolis</span>
+      </span>
+      <a class="meta-item" href="https://instagram.com/ChrisIceCreamIndy" target="_blank" rel="noopener">
+        <svg class="meta-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6H8l1.3-2h5.4L16 6h1.5A2.5 2.5 0 0 1 20 8.5v8A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5z"/><circle cx="12" cy="12.5" r="3.2"/></svg>
+        <span>@ChrisIceCreamIndy</span>
+      </a>
+    </div>
+
+    <div class="lang-toggle" role="group" aria-label="Language toggle">
+      <button type="button" id="btn-en" aria-pressed="true">ENGLISH</button>
+      <button type="button" id="btn-es" aria-pressed="false">ESPAÑOL</button>
+    </div>
+  </div>
+</header>
+
+<div class="reference-note" role="note">
+  <span data-en="For reference only — this online menu mirrors our in-store menu. Prices and availability may change. We take orders by phone, not online." data-es="Solo como referencia — este menú en línea refleja nuestro menú en la tienda. Los precios y la disponibilidad pueden cambiar. Tomamos pedidos por teléfono, no en línea."></span>
+</div>
+
+<nav class="menu-nav" id="menu-nav" aria-label="Menu sections"></nav>
+
+<div class="wrap" id="sheets"></div>
+
+<footer>
+  <h3 data-en="Visit Us" data-es="Visítanos"></h3>
+  <p data-en="Homemade ice cream and Mexican food in Nora Corners" data-es="Helado casero y comida mexicana en Nora Corners"></p>
+  <div class="contact-grid">
+    <div class="item">
+      <span class="label" data-en="ADDRESS" data-es="DIRECCIÓN"></span>
+      1484 East 86th St<br>Nora Corners Shopping Center<br>Indianapolis, IN 46240
+    </div>
+    <div class="item">
+      <span class="label" data-en="PHONE" data-es="TELÉFONO"></span>
+      <a class="phone-link" href="tel:3172552156">(317) 255-2156</a>
+    </div>
+    <div class="item">
+      <span class="label" data-en="HOURS" data-es="HORARIO"></span>
+      <span data-en="10:30am – 8:00pm daily" data-es="10:30am – 8:00pm todos los días"></span><br>
+      <span data-en="Closed Sundays" data-es="Cerrado los domingos"></span>
+    </div>
+    <div class="item">
+      <span class="label" data-en="FOLLOW" data-es="SÍGUENOS"></span>
+      <a class="phone-link" href="https://instagram.com/ChrisIceCreamIndy" target="_blank" rel="noopener">@ChrisIceCreamIndy</a>
+    </div>
+  </div>
+  <p class="call-note" data-en="This online menu is for reference only. We take orders by phone — call (317) 255-2156." data-es="Este menú en línea es solo como referencia. Tomamos pedidos por teléfono — llama al (317) 255-2156."></p>
+</footer>
+
+<script>
+// ---- Recreated brand mark: heart-topped waffle cone standing in for the apostrophe/"i" ----
+let logoInstanceCount = 0;
+function heartConeSVG(){
+  logoInstanceCount++;
+  const pid = "waffle-" + logoInstanceCount;
+  return `
+<svg viewBox="0 0 176 266" aria-hidden="true">
+  <defs>
+    <pattern id="${pid}" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="9" height="9" fill="#1c1815"/>
+      <rect width="9" height="9" fill="none" stroke="#f4efe4" stroke-width="1.8"/>
+    </pattern>
+  </defs>
+  <path d="M92,34 C98,10 122,-2 146,8 C172,20 182,58 166,88 C158,118 120,146 88,156 C56,146 18,118 8,84 C-6,52 14,8 50,6 C72,4 86,14 92,34 Z" fill="var(--heart)"/>
+  <path d="M44,126 L132,126 L88,266 Z" fill="url(#${pid})" stroke="#1c1815" stroke-width="2"/>
+</svg>`;
+}
+
+function buildBrandLockup(){
+  const wrap = el("div","brand-lockup");
+  const word = el("span","chris-word");
+  word.appendChild(document.createTextNode("CHR"));
+  word.appendChild(el("span","icon-slot", heartConeSVG()));
+  word.appendChild(document.createTextNode("S’"));
+  wrap.appendChild(word);
+  const right = el("span","right-block");
+  right.appendChild(el("span","word-icecream","ice cream"));
+  right.appendChild(el("span","brand-line2",'<span class="mex">MEXICAN</span> <span class="food">FOOD</span>'));
+  wrap.appendChild(right);
+  return wrap;
+}
+
+const T = {
+  tacos:{en:"Tacos",es:"Tacos"}, burritos:{en:"Burritos",es:"Burritos"},
+  enchiladas:{en:"Enchiladas",es:"Enchiladas"}, flautas:{en:"Flautas [5]",es:"Flautas [5]"},
+  sopes:{en:"Sopes [3]",es:"Sopes [3]"}, tortas:{en:"Tortas",es:"Tortas"},
+  quesadillas:{en:"Quesadillas",es:"Quesadillas"}, plates:{en:"Plates",es:"Platos"},
+  sides:{en:"Sides",es:"Guarniciones"}, kids:{en:"Kids",es:"Niños"},
+  icecream:{en:"Ice Cream",es:"Helados"}, smoothies:{en:"Smoothies",es:"Licuados"},
+  visit:{en:"Visit Us",es:"Visítanos"},
+  tagline:{en:"Homemade ice cream, and fresh ingredients Mexican food", es:"Helado casero y comida mexicana con ingredientes frescos"},
+};
+
+const page1 = {
+  colA: [
+    { key:"tacos", title:T.tacos, items:[
+      { name:{en:"Steak, Chicken, Pork, or Chorizo", es:"Res, Pollo, Cerdo o Chorizo"}, price:"$4.35",
+        desc:{en:"Choice of meat, cilantro, lettuce, and onions", es:"Elección de carne, cilantro, lechuga y cebolla"} },
+      { name:{en:"Campechano", es:"Campechano"}, price:"$4.35",
+        desc:{en:"Chorizo mixed with steak, cilantro, lettuce, and onions", es:"Chorizo mezclado con res, cilantro, lechuga y cebolla"} },
+      { name:{en:"Veggie", es:"Vegetariano"}, price:"$4.35", veg:true,
+        desc:{en:"Beans, rice, lettuce, cilantro, tomato, onions, and avocado", es:"Frijoles, arroz, lechuga, cilantro, tomate, cebolla y aguacate"} },
+    ]},
+    { key:"burritos", title:T.burritos, items:[
+      { name:{en:"Steak, Chicken, Pork, or Chorizo", es:"Res, Pollo, Cerdo o Chorizo"}, price:"$11.99",
+        desc:{en:"Choice of meat, beans, cheese, rice, sour cream, lettuce, and onions", es:"Elección de carne, frijoles, queso, arroz, crema, lechuga y cebolla"} },
+      { name:{en:"Campechano", es:"Campechano"}, price:"$11.99",
+        desc:{en:"Chorizo mixed with steak, beans, cheese, rice, sour cream, lettuce, and onions", es:"Chorizo mezclado con res, frijoles, queso, arroz, crema, lechuga y cebolla"} },
+      { name:{en:"Veggie", es:"Vegetariano"}, price:"$11.99", veg:true,
+        desc:{en:"Beans, cheese, rice, sour cream, lettuce, onions, and avocado", es:"Frijoles, queso, arroz, crema, lechuga, cebolla y aguacate"} },
+      { name:{en:"California Style", es:"Estilo California"}, price:"$12.99",
+        desc:{en:"Choice of meat, beans, cheese, rice, sour cream, lettuce, onions, avocado, and fries", es:"Elección de carne, frijoles, queso, arroz, crema, lechuga, cebolla, aguacate y papas fritas"} },
+    ]},
+  ],
+  colB: [
+    { key:"enchiladas", title:T.enchiladas, special:"enchiladas" },
+    { key:"flautas", title:T.flautas, items:[
+      { name:{en:"Chicken or Steak", es:"Pollo o Res"}, price:"$11.99",
+        desc:{en:"Choice of meat, lettuce, cilantro, sour cream, and cheese", es:"Elección de carne, lechuga, cilantro, crema y queso"} },
+    ]},
+    { key:"sopes", title:T.sopes, items:[
+      { name:{en:"Steak, Chicken, Pork, or Chorizo", es:"Res, Pollo, Cerdo o Chorizo"}, price:"$15.00",
+        desc:{en:"Choice of meat, beans, lettuce, cilantro, onions, sour cream, and cotija cheese", es:"Elección de carne, frijoles, lechuga, cilantro, cebolla, crema y queso cotija"} },
+      { name:{en:"Campechano", es:"Campechano"}, price:"$15.00",
+        desc:{en:"Chorizo mixed with steak, beans, lettuce, cilantro, onions, sour cream, and cotija cheese", es:"Chorizo mezclado con res, frijoles, lechuga, cilantro, cebolla, crema y queso cotija"} },
+      { name:{en:"Veggie", es:"Vegetariano"}, price:"$15.00", veg:true,
+        desc:{en:"Lettuce, cilantro, onions, sour cream, cheese, rice, and beans", es:"Lechuga, cilantro, cebolla, crema, queso, arroz y frijoles"} },
+    ]},
+  ],
+};
+
+const page2 = {
+  colA: [
+    { key:"tortas", title:T.tortas, items:[
+      { name:{en:"Steak, Pork, Ham, Hot Dog, Chorizo, or Chicken", es:"Res, Cerdo, Jamón, Hot Dog, Chorizo o Pollo"}, price:"$12.99",
+        desc:{en:"Choice of meat, Mexican bread, beans, cheese, tomato, onions, lettuce, avocado, and mayonnaise", es:"Elección de carne, pan mexicano, frijoles, queso, tomate, cebolla, lechuga, aguacate y mayonesa"} },
+      { name:{en:"Chicken, or Steak Milanesa", es:"Milanesa de Pollo o Res"}, price:"$12.99",
+        desc:{en:"Choice of meat, Mexican bread, beans, cheese, tomato, onions, lettuce, avocado, and mayonnaise", es:"Elección de carne, pan mexicano, frijoles, queso, tomate, cebolla, lechuga, aguacate y mayonesa"} },
+      { name:{en:"Cubana", es:"Cubana"}, price:"$12.99",
+        desc:{en:"Mexican bread, beans, cheese, ham, hot dog, breaded chicken, tomato, onions, lettuce, avocado, and mayonnaise", es:"Pan mexicano, frijoles, queso, jamón, hot dog, pollo empanizado, tomate, cebolla, lechuga, aguacate y mayonesa"} },
+      { name:{en:"Caprichosa", es:"Caprichosa"}, price:"$13.99",
+        desc:{en:"Mexican bread, beans, cheese, ham, hot dog, breaded chicken, tomato, onions, lettuce, avocado, mayonnaise, and scrambled eggs with chorizo", es:"Pan mexicano, frijoles, queso, jamón, hot dog, pollo empanizado, tomate, cebolla, lechuga, aguacate, mayonesa y huevo revuelto con chorizo"} },
+    ]},
+    { key:"quesadillas", title:T.quesadillas, items:[
+      { name:{en:"Steak, Chicken, Pork, or Chorizo", es:"Res, Pollo, Cerdo o Chorizo"}, price:"$11.99",
+        desc:{en:"Choice of meat, cheese, onions, and lettuce", es:"Elección de carne, queso, cebolla y lechuga"} },
+    ]},
+  ],
+  colB: [
+    { key:"plates", title:T.plates, items:[
+      { name:{en:"Breaded Chicken or Steak", es:"Pollo o Res Empanizado"}, price:"$15.99",
+        desc:{en:"Choice of meat, rice, beans, salad with a slice of avocado, and corn tortillas", es:"Elección de carne, arroz, frijoles, ensalada con una rebanada de aguacate y tortillas de maíz"} },
+      { name:{en:"Steak Mexican Style", es:"Res Estilo Mexicano"}, price:"$15.99", spicy:true,
+        desc:{en:"Steak with jalapeños, onions, and tomato with rice, beans, salad with a slice of avocado and corn tortillas", es:"Res con jalapeños, cebolla y tomate, con arroz, frijoles, ensalada con aguacate y tortillas de maíz"} },
+      { name:{en:"Steak Salvadorean Style", es:"Res Estilo Salvadoreño"}, price:"$15.99",
+        desc:{en:"Steak with onions and tomato with rice, beans, salad with a slice of avocado and corn tortillas", es:"Res con cebolla y tomate, con arroz, frijoles, ensalada con aguacate y tortillas de maíz"} },
+    ]},
+    { key:"sides", title:T.sides, items:[
+      { name:{en:"Fries", es:"Papas Fritas"}, price:"$3.50" },
+      { name:{en:"Rice", es:"Arroz"}, price:"$3.50" },
+      { name:{en:"Beans", es:"Frijoles"}, price:"$3.50" },
+    ]},
+    { key:"kids", title:T.kids, items:[
+      { name:{en:"Chicken Fingers", es:"Dedos de Pollo"}, price:"$9.99",
+        desc:{en:"Chicken fingers and french fries", es:"Dedos de pollo con papas fritas"} },
+      { name:{en:"Cheese Quesadilla", es:"Quesadilla de Queso"}, price:"$6.99",
+        desc:{en:"Cheese, onions, and lettuce", es:"Queso, cebolla y lechuga"} },
+    ]},
+  ],
+};
+
+const flavors = [
+  {en:"Vanilla", es:"Vainilla"}, {en:"Rum Raisin", es:"Ron con Pasas"},
+  {en:"Strawberry", es:"Fresa"}, {en:"White Russian", es:"White Russian"},
+  {en:"Coffee", es:"Café"}, {en:"Mamey", es:"Mamey"},
+  {en:"Chocolate Chip Cookie Dough", es:"Masa de Galleta con Chispas"}, {en:"Mango", es:"Mango"},
+  {en:"Mint Chocolate Chip", es:"Menta con Chispas"}, {en:"Guanabana Soursop", es:"Guanábana"},
+  {en:"Oreo", es:"Oreo"}, {en:"Coconut", es:"Coco"},
+  {en:"Butter Pecan", es:"Mantequilla con Nuez"}, {en:"Guava", es:"Guayaba"},
+  {en:"Chocolate!", es:"¡Chocolate!"}, {en:"Pistachio", es:"Pistacho"},
+];
+
+const icePrices = [
+  { label:{en:"Junior", es:"Junior"}, price:"$3.99" },
+  { label:{en:"Small", es:"Pequeño"}, price:"$6.40" },
+  { label:{en:"Large", es:"Grande"}, price:"$7.99" },
+  { label:{en:"Pint", es:"Pinta"}, price:"$10.69" },
+  { label:{en:"Banana Split", es:"Banana Split"}, price:"$11.89" },
+  { label:{en:"Toppings", es:"Toppings"}, price:"$0.60" },
+];
+
+const smoothies = [
+  { name:{en:"Berry Banana", es:"Berry Banana"}, desc:{en:"Strawberry, banana, vanilla ice cream", es:"Fresa, plátano, helado de vainilla"} },
+  { name:{en:"Blue Hawaiian", es:"Blue Hawaiian"}, desc:{en:"Banana, blueberries, pineapple, vanilla ice cream, apple juice", es:"Plátano, arándanos, piña, helado de vainilla, jugo de manzana"} },
+  { name:{en:"Nana Nutter", es:"Nana Nutter"}, desc:{en:"Banana, apple juice, peanut butter, vanilla ice cream", es:"Plátano, jugo de manzana, crema de cacahuate, helado de vainilla"} },
+  { name:{en:"Orange Sipper", es:"Orange Sipper"}, desc:{en:"Orange juice, vanilla ice cream", es:"Jugo de naranja, helado de vainilla"} },
+  { name:{en:"Cafe Captiva", es:"Cafe Captiva"}, desc:{en:"Coffee, crushed ice, chocolate syrup, vanilla ice cream, whip cream", es:"Café, hielo picado, jarabe de chocolate, helado de vainilla, crema batida"} },
+];
+
+let lang = "en";
+
+function el(tag, cls, html){
+  const e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(html !== undefined) e.innerHTML = html;
+  return e;
+}
+
+function renderDish(it){
+  const d = el("div","dish");
+  const row = el("div","dish-row");
+  const nameSpan = document.createElement("span");
+  nameSpan.textContent = it.name[lang];
+  if(it.spicy) nameSpan.innerHTML += ' <span class="badge-spicy">🌶</span>';
+  if(it.veg) nameSpan.innerHTML += ' <span class="badge-veg">🌱</span>';
+  row.appendChild(nameSpan);
+  row.appendChild(el("span","price", it.price));
+  d.appendChild(row);
+  if(it.desc && it.desc[lang]){
+    d.appendChild(el("p","desc", it.desc[lang]));
+  }
+  return d;
+}
+
+function renderGroup(group){
+  const g = el("div","food-group");
+  g.id = group.key;
+  g.appendChild(el("h2", null, group.title[lang]));
+
+  if(group.special === "enchiladas"){
+    const priceRow = el("div","enchilada-prices");
+    priceRow.innerHTML = '<span>[3] <span class="price">$11.50</span></span><span>[4] <span class="price">$12.99</span></span>';
+    g.appendChild(priceRow);
+    const d = el("div","dish");
+    d.appendChild(el("p","desc", (lang==="en"
+      ? "Steak, Chicken, Pork, or Chorizo — choice of meat, cilantro, lettuce, onions, sour cream, cotija cheese, and green sauce"
+      : "Res, Pollo, Cerdo o Chorizo — elección de carne, cilantro, lechuga, cebolla, crema, queso cotija y salsa verde")));
+    g.appendChild(d);
+    g.appendChild(el("p","addon-note", lang==="en" ? "Add egg +$1.50" : "Agregar huevo +$1.50"));
+    return g;
+  }
+
+  group.items.forEach(it=> g.appendChild(renderDish(it)));
+  return g;
+}
+
+function renderPageSheet(page){
+  const sheet = el("div","sheet");
+  sheet.appendChild(el("div","tape l"));
+  sheet.appendChild(el("div","tape r"));
+  sheet.appendChild(el("div","rule-double sheet-top-rule"));
+
+  const body = el("div","sheet-body");
+  const colA = el("div","col");
+  page.colA.forEach(group=> colA.appendChild(renderGroup(group)));
+  const colB = el("div","col");
+  page.colB.forEach(group=> colB.appendChild(renderGroup(group)));
+  body.appendChild(colA);
+  body.appendChild(colB);
+  sheet.appendChild(body);
+
+  const foot = el("div","sheet-footer");
+  foot.innerHTML = '<span class="meta-item"><svg class="meta-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg> 1484 East 86th St. Nora Corners Shopping Center, Indianapolis, IN 46240</span>' +
+    '<a class="meta-item" href="tel:3172552156"><svg class="meta-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h3.5l1.5 4-2 1.5a11 11 0 0 0 6.5 6.5l1.5-2 4 1.5V19a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg> (317) 255-2156</a>' +
+    '<a href="https://instagram.com/ChrisIceCreamIndy" target="_blank" rel="noopener">@ChrisIceCreamIndy</a>';
+  sheet.appendChild(foot);
+
+  return sheet;
+}
+
+function renderIceSheet(){
+  const sheet = el("div","sheet");
+  sheet.id = "icecream";
+  sheet.appendChild(el("div","tape l"));
+  sheet.appendChild(el("div","tape r"));
+
+  sheet.appendChild(el("div","ice-title", lang==="en" ? "ICE CREAM PRICES" : "PRECIOS DE HELADO"));
+  const priceGrid = el("div","ice-price-grid");
+  icePrices.forEach(p=>{
+    const row = el("div","row");
+    row.appendChild(el("span", null, p.label[lang]));
+    row.appendChild(el("span", null, p.price));
+    priceGrid.appendChild(row);
+  });
+  sheet.appendChild(priceGrid);
+
+  const wrap = el("div","flavor-smoothie-wrap");
+  const board = el("div","flavor-board");
+  board.appendChild(el("h3", null, lang==="en" ? "CHRIS' FLAVORS" : "SABORES DE CHRIS'"));
+  const fgrid = el("div","flavor-grid");
+  flavors.forEach(f=> fgrid.appendChild(el("div","flavor-tag", f[lang])));
+  board.appendChild(fgrid);
+  wrap.appendChild(board);
+
+  const smList = el("div","smoothie-list");
+  smList.id = "smoothies";
+  smList.appendChild(el("h3", null, lang==="en" ? "CHRIS' SMOOTHIES" : "LICUADOS DE CHRIS'"));
+  smoothies.forEach(item=>{
+    const card = el("div","smoothie-card");
+    card.appendChild(el("h4", null, item.name[lang]));
+    card.appendChild(el("p", null, item.desc[lang]));
+    smList.appendChild(card);
+  });
+  wrap.appendChild(smList);
+  sheet.appendChild(wrap);
+
+  const foot = el("div","sheet-footer");
+  foot.innerHTML = '<span class="meta-item"><svg class="meta-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg> 1484 East 86th St. Nora Corners Shopping Center, Indianapolis, IN 46240</span>' +
+    '<a class="meta-item" href="tel:3172552156"><svg class="meta-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h3.5l1.5 4-2 1.5a11 11 0 0 0 6.5 6.5l1.5-2 4 1.5V19a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg> (317) 255-2156</a>';
+  sheet.appendChild(foot);
+
+  return sheet;
+}
+
+function renderNav(){
+  const nav = document.getElementById("menu-nav");
+  nav.innerHTML = "";
+  const items = [
+    ...page1.colA, ...page1.colB, ...page2.colA, ...page2.colB,
+  ].map(g=>({id:g.key, title:g.title}));
+  items.push({id:"icecream", title:T.icecream});
+  items.push({id:"smoothies", title:T.smoothies});
+  items.forEach(s=>{
+    const a = el("a", null, s.title[lang]);
+    a.href = "#"+s.id;
+    a.addEventListener("click", (ev)=>{
+      const target = document.getElementById(s.id);
+      if(!target) return;
+      ev.preventDefault();
+      const navH = document.getElementById("menu-nav").offsetHeight + 12;
+      const top = target.getBoundingClientRect().top + window.pageYOffset - navH;
+      window.scrollTo({top, behavior:"smooth"});
+    });
+    nav.appendChild(a);
+  });
+}
+
+function renderSheets(){
+  const container = document.getElementById("sheets");
+  container.innerHTML = "";
+  container.appendChild(renderPageSheet(page1));
+  container.appendChild(renderPageSheet(page2));
+  container.appendChild(renderIceSheet());
+}
+
+function applyStaticText(){
+  document.querySelectorAll("[data-en]").forEach(node=>{
+    node.textContent = node.getAttribute(lang === "en" ? "data-en" : "data-es");
+  });
+  document.documentElement.lang = lang;
+  document.getElementById("btn-en").setAttribute("aria-pressed", String(lang==="en"));
+  document.getElementById("btn-es").setAttribute("aria-pressed", String(lang==="es"));
+}
+
+function observeSheets(){
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("in-view");
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.08});
+  document.querySelectorAll(".sheet").forEach(s=>obs.observe(s));
+}
+
+function renderMastheadLogo(){
+  const slot = document.getElementById("masthead-logo");
+  slot.innerHTML = "";
+  slot.appendChild(buildBrandLockup());
+}
+
+function renderAll(){
+  applyStaticText();
+  renderMastheadLogo();
+  renderNav();
+  renderSheets();
+  observeSheets();
+}
+
+document.getElementById("btn-en").addEventListener("click", ()=>{ lang="en"; renderAll(); });
+document.getElementById("btn-es").addEventListener("click", ()=>{ lang="es"; renderAll(); });
+
+renderAll();
+</script>
+</body>
+</html>
