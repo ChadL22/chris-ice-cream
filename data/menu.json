@@ -42,7 +42,7 @@
         {"name_en": "Beans", "name_es": "Frijoles", "price": "$3.50", "description_en": "", "description_es": "", "label": "None", "sold_out": false, "hidden": false}
     ]},
     {"title_en": "Kids", "title_es": "Niños", "sheet": "Sheet 2", "column": "Right", "price_line": "", "note_en": "", "note_es": "", "hidden": false, "items": [
-        {"name_en": "Chicken Fingers", "name_es": "Dedos de Pollo", "price": "$9.99", "description_en": "Chicken fingers and french fries", "description_es": "Dedos de pollo con papas fritas", "label": "None", "sold_out": false, "hidden": false},
+        {"name_en": "Chicken Fingers", "name_es": "Chicken Fingers", "price": "$9.99", "description_en": "Chicken fingers and french fries", "description_es": "Chicken fingers con papas fritas", "label": "None", "sold_out": false, "hidden": false},
         {"name_en": "Cheese Quesadilla", "name_es": "Quesadilla de Queso", "price": "$6.99", "description_en": "Cheese, onions, and lettuce", "description_es": "Queso, cebolla y lechuga", "label": "None", "sold_out": false, "hidden": false}
     ]}
   ]
