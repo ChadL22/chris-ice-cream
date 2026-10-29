@@ -13,7 +13,8 @@ This site is a virtual menu only. It does not take online orders; customers orde
 
 | File | What it holds |
 |---|---|
-| `index.html` | Page layout, styles, logo, and the code that draws the menu |
+| `index.html` | Page layout, styles, and security policy |
+| `app.js` | Logo and the code that draws the menu (kept separate so the security policy can block any inline/injected scripts) |
 | `data/menu.json` | Food sections and items (prices, descriptions, sold out, hidden) |
 | `data/ice-cream.json` | Ice cream sizes/prices, flavors, smoothies |
 | `data/info.json` | Phone, hours, address, Instagram |
